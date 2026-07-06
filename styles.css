@@ -1,7 +1,7 @@
 :root {
   --header-color: burlywood;
   --display-color: rgb(225, 209, 188);
-  --book-color: brown;
+  --book-color: rgb(104, 33, 33);
   --light-text-color: rgb(225, 183, 173);
   --dark-text-color: rgb(65, 27, 13);
 }
@@ -69,6 +69,8 @@ header {
   padding: 15px;
   color: var(--light-text-color);
   background-color: var(--book-color);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 
   display: grid;
   grid-template-rows: 1fr 3fr 1fr 1fr;
