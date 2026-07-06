@@ -6,4 +6,22 @@
 
 body {
   min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: 1fr 10fr;
+}
+
+header {
+  font-size: 2em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(65, 27, 13);
+  background-color: burlywood;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-display {
+  background-color: rgb(225, 209, 188);
 }
