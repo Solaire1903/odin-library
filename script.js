@@ -1,3 +1,6 @@
+/**
+ * Book constructor
+*/
 function Book(author, title, pages, releaseDate) {
     this.author = author;
     this.title = title;
@@ -6,10 +9,16 @@ function Book(author, title, pages, releaseDate) {
     this.id = crypto.randomUUID();
 }
 
+/**
+ * Adds a book with given parameters to the library array
+ */
 function addBookToLibrary(author, title, pages, releaseDate) {
     library.push(new Book(author, title, pages, releaseDate));
 }
 
+/**
+ * Displays the library array visually on the page
+ */
 function displayLibrary() {
     const bookDisplay = document.querySelector(".book-display");
 
@@ -42,5 +51,3 @@ function displayLibrary() {
 }
 
 const library = [];
-
-displayLibrary();
