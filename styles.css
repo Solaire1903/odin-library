@@ -3,6 +3,7 @@
   --display-color: rgb(225, 209, 188);
   --book-color: brown;
   --light-text-color: rgb(225, 183, 173);
+  --dark-text-color: rgb(65, 27, 13);
 }
 
 * {
@@ -19,14 +20,34 @@ body {
 }
 
 header {
+  padding: 20px;
   font-size: 2em;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgb(65, 27, 13);
+  color: var(--dark-text-color);
   background-color: var(--header-color);
 
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
+}
+
+header>button {
+  height: 30px;
+  width: 100px;
+  color: var(--light-text-color);
+  background-color: var(--dark-text-color);
+  border: none;
+  border-radius: 10px;
+  font-size: 0.5em;
+}
+
+header>button:hover {
+  background-color: rgb(46, 19, 9);
+  cursor: pointer;
+}
+
+header>p {
+  justify-self: center;
 }
 
 .book-display {
