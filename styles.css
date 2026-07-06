@@ -16,38 +16,40 @@ body {
   min-height: 100vh;
 
   display: grid;
-  grid-template-rows: 1fr 10fr;
+  grid-template-rows: 0.8fr 0.5fr 10fr;
 }
 
 header {
-  padding: 20px;
   font-size: 2em;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: var(--dark-text-color);
   background-color: var(--header-color);
 
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-header>button {
+.button-area {
+  background-color: var(--header-color);
+
+  display: flex;
+  justify-content: center;
+}
+
+.add-book-button {
   height: 30px;
   width: 100px;
   color: var(--light-text-color);
   background-color: var(--dark-text-color);
   border: none;
   border-radius: 10px;
-  font-size: 0.5em;
+  font-size: 1em;
 }
 
-header>button:hover {
+.add-book-button:hover {
   background-color: rgb(46, 19, 9);
   cursor: pointer;
-}
-
-header>p {
-  justify-self: center;
 }
 
 .book-display {
