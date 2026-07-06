@@ -1,7 +1,15 @@
+:root {
+  --header-color: burlywood;
+  --display-color: rgb(225, 209, 188);
+  --book-color: brown;
+  --light-text-color: rgb(225, 183, 173);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid black;
 }
 
 body {
@@ -15,7 +23,7 @@ header {
   font-size: 2em;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: rgb(65, 27, 13);
-  background-color: burlywood;
+  background-color: var(--header-color);
 
   display: flex;
   justify-content: center;
@@ -23,5 +31,42 @@ header {
 }
 
 .book-display {
-  background-color: rgb(225, 209, 188);
+  background-color: var(--display-color);
+  padding: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.book {
+  height: 300px;
+  width: 300px;
+  padding: 15px;
+  color: var(--light-text-color);
+  background-color: var(--book-color);
+
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr 1fr;
+}
+
+.author {
+  font-size: 1.4em;
+}
+
+.title {
+  font-size: 2em;
+}
+
+.author, .title {
+  justify-self: center;
+  align-self: center;
+}
+
+.pages, .release-date {
+  font-size: 1.2em;
+
+  align-self: center;
 }
