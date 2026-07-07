@@ -81,6 +81,8 @@ header {
   background-color: var(--book-color);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   display: grid;
   grid-template-rows: 1fr 3fr 1fr 1fr;
