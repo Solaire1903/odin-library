@@ -105,3 +105,8 @@ dialog {
   color: var(--dark-text-color);
   background-color: var(--header-color);
 }
+
+dialog::backdrop {
+  background-color: black;
+  opacity: 30%;
+}
