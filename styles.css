@@ -94,3 +94,11 @@ header {
 
   align-self: center;
 }
+
+dialog {
+  margin: auto;
+  padding: 20px;
+  top: 45%;
+  color: var(--dark-text-color);
+  background-color: var(--header-color);
+}
