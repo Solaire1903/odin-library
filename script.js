@@ -51,3 +51,10 @@ function displayLibrary() {
 }
 
 const library = [];
+
+const addBookButton = document.querySelector(".add-book-button");
+const dialogWindow = document.querySelector("dialog");
+
+addBookButton.addEventListener("click", () => {
+    dialogWindow.showModal();
+});
