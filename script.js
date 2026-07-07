@@ -45,10 +45,20 @@ function updateLibraryDisplay() {
         pages.textContent = `${book.pages} pages`;
         bookElement.appendChild(pages);
 
+        const readButton = document.createElement("button");
+        readButton.classList.add("read-button");
+        readButton.textContent = "Toggle read";
+        bookElement.appendChild(readButton);
+
         const releaseDate = document.createElement("p");
         releaseDate.classList.add("release-date");
         releaseDate.textContent = `Released in: ${book.releaseDate}`;
         bookElement.appendChild(releaseDate);
+
+        const removeButton = document.createElement("button");
+        removeButton.classList.add("remove-button");
+        removeButton.textContent = "Remove";
+        bookElement.appendChild(removeButton);
 
         bookElement.setAttribute("data-id", book.id);
 

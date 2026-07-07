@@ -1,10 +1,11 @@
 :root {
-  --header-color: burlywood;
+  --header-color: rgb(222, 184, 135);
   --display-color: rgb(225, 209, 188);
   --book-color: rgb(104, 33, 33);
   --light-text-color: rgb(225, 183, 173);
   --dark-text-color: rgb(65, 27, 13);
   --button-hover-color: rgb(46, 19, 9);
+  --button-hover-color-light: rgb(203, 162, 110);
 }
 
 * {
@@ -35,6 +36,10 @@ header {
   align-items: center;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .button-area {
   background-color: var(--header-color);
 
@@ -59,7 +64,6 @@ header {
 .add-book-button:hover,
 .submit-button:hover {
   background-color: var(--button-hover-color);
-  cursor: pointer;
 }
 
 .book-display {
@@ -85,7 +89,9 @@ header {
   text-overflow: ellipsis;
 
   display: grid;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 3fr 1fr 1fr;
+  column-gap: 15px;
 }
 
 .author {
@@ -100,6 +106,8 @@ header {
 .title {
   justify-self: center;
   align-self: center;
+
+  grid-column: 1 /span 2;
 }
 
 .pages,
@@ -107,6 +115,22 @@ header {
   font-size: 1.2em;
 
   align-self: center;
+}
+
+.read-button,
+.remove-button {
+  height: 20px;
+  color: var(--dark-text-color);
+  background-color: var(--header-color);
+  border: none;
+  border-radius: 5px;
+
+  align-self: center;
+}
+
+.read-button:hover,
+.remove-button:hover {
+  background-color: var(--button-hover-color-light);
 }
 
 dialog {
