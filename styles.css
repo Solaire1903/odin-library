@@ -4,6 +4,7 @@
   --book-color: rgb(104, 33, 33);
   --light-text-color: rgb(225, 183, 173);
   --dark-text-color: rgb(65, 27, 13);
+  --button-hover-color: rgb(46, 19, 9);
 }
 
 * {
@@ -41,7 +42,8 @@ header {
   justify-content: center;
 }
 
-.add-book-button, .submit-button {
+.add-book-button,
+.submit-button {
   color: var(--light-text-color);
   background-color: var(--dark-text-color);
   border: none;
@@ -54,8 +56,9 @@ header {
   font-size: 1em;
 }
 
-.add-book-button:hover, .submit-button:hover {
-  background-color: rgb(46, 19, 9);
+.add-book-button:hover,
+.submit-button:hover {
+  background-color: var(--button-hover-color);
   cursor: pointer;
 }
 
@@ -91,12 +94,14 @@ header {
   font-size: 2em;
 }
 
-.author, .title {
+.author,
+.title {
   justify-self: center;
   align-self: center;
 }
 
-.pages, .release-date {
+.pages,
+.release-date {
   font-size: 1.2em;
 
   align-self: center;
@@ -117,8 +122,23 @@ dialog::backdrop {
 
 dialog>div {
   display: grid;
-  grid-template-rows: 1fr 10fr 2fr;
-  gap: 15px;
+  grid-template-rows: 0.5fr 7fr 2fr;
+}
+
+.close-button-wrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.close-button {
+  height: 30px;
+  width: 30px;
+  fill: var(--dark-text-color);
+}
+
+.close-button:hover {
+  fill: red;
+  cursor: pointer;
 }
 
 form {
@@ -146,5 +166,5 @@ input {
   width: 300px;
   font-size: 0.8em;
 
-  align-self: end;
+  align-self: center;
 }

@@ -54,7 +54,12 @@ const library = [];
 
 const addBookButton = document.querySelector(".add-book-button");
 const dialogWindow = document.querySelector("dialog");
+const closeButton = document.querySelector(".close-button");
 
 addBookButton.addEventListener("click", () => {
     dialogWindow.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+    dialogWindow.close();
 });
