@@ -50,6 +50,8 @@ function updateLibraryDisplay() {
         releaseDate.textContent = `Released in: ${book.releaseDate}`;
         bookElement.appendChild(releaseDate);
 
+        bookElement.setAttribute("data-id", book.id);
+
         bookDisplay.appendChild(bookElement);
     }
 }
@@ -89,5 +91,4 @@ form.addEventListener("submit", (e) => {
     updateLibraryDisplay();
 
     dialogWindow.close();
-
 });
