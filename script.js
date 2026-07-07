@@ -56,6 +56,12 @@ function updateLibraryDisplay() {
 
 const library = [];
 
+addBookToLibrary("Oscar Wilde", "The Picture of Dorian Gray", 320, 1891);
+addBookToLibrary("George Orwell", "1984", 317, 1949);
+addBookToLibrary("Homer", "Odyssey", 550, -700);
+
+updateLibraryDisplay();
+
 const addBookButton = document.querySelector(".add-book-button");
 const dialogWindow = document.querySelector("dialog");
 const closeButton = document.querySelector(".close-button");
