@@ -19,8 +19,12 @@ function addBookToLibrary(author, title, pages, releaseDate) {
 /**
  * Displays the library array visually on the page
  */
-function displayLibrary() {
+function updateLibraryDisplay() {
     const bookDisplay = document.querySelector(".book-display");
+    
+    while (bookDisplay.childElementCount !== 0) {
+        bookDisplay.lastChild.remove();
+    }
 
     for (const book of library) {
         const bookElement = document.createElement("div");
@@ -56,10 +60,29 @@ const addBookButton = document.querySelector(".add-book-button");
 const dialogWindow = document.querySelector("dialog");
 const closeButton = document.querySelector(".close-button");
 
+const form = document.querySelector("#book-form");
+const formInputs = document.querySelectorAll("input");
+
 addBookButton.addEventListener("click", () => {
     dialogWindow.showModal();
 });
 
 closeButton.addEventListener("click", () => {
     dialogWindow.close();
+});
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const inputValues = [];
+    for (const input of formInputs) {
+        inputValues.push(input.value);
+        input.value = "";
+    }
+
+    addBookToLibrary(inputValues[0], inputValues[1], inputValues[2], inputValues[3]);
+    updateLibraryDisplay();
+
+    dialogWindow.close();
+
 });
