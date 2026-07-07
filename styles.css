@@ -41,17 +41,20 @@ header {
   justify-content: center;
 }
 
-.add-book-button {
-  height: 30px;
-  width: 100px;
+.add-book-button, .submit-button {
   color: var(--light-text-color);
   background-color: var(--dark-text-color);
   border: none;
   border-radius: 10px;
+}
+
+.add-book-button {
+  height: 30px;
+  width: 100px;
   font-size: 1em;
 }
 
-.add-book-button:hover {
+.add-book-button:hover, .submit-button:hover {
   background-color: rgb(46, 19, 9);
   cursor: pointer;
 }
@@ -141,6 +144,7 @@ input {
 .submit-button {
   height: 30px;
   width: 300px;
+  font-size: 0.8em;
 
   align-self: end;
 }
