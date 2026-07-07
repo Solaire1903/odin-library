@@ -112,6 +112,12 @@ dialog::backdrop {
   opacity: 30%;
 }
 
+dialog>div {
+  display: grid;
+  grid-template-rows: 1fr 10fr 2fr;
+  gap: 15px;
+}
+
 form {
   display: grid;
   gap: 20px;
@@ -130,4 +136,11 @@ input {
   border: 2px solid var(--dark-text-color);
   color: var(--dark-text-color);
   background-color: var(--display-color);
+}
+
+.submit-button {
+  height: 30px;
+  width: 300px;
+
+  align-self: end;
 }
