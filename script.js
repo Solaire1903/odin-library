@@ -65,9 +65,7 @@ updateLibraryDisplay();
 const addBookButton = document.querySelector(".add-book-button");
 const dialogWindow = document.querySelector("dialog");
 const closeButton = document.querySelector(".close-button");
-
 const form = document.querySelector("#book-form");
-const formInputs = document.querySelectorAll("input");
 
 addBookButton.addEventListener("click", () => {
     dialogWindow.showModal();
@@ -81,6 +79,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const inputValues = [];
+    const formInputs = document.querySelectorAll("input");
     for (const input of formInputs) {
         inputValues.push(input.value);
         input.value = "";
