@@ -183,7 +183,8 @@ form>div {
   flex-direction: column;
 }
 
-input {
+input[type="text"],
+input[type="number"] {
   height: 25px;
   width: 300px;
   padding: 5px;
@@ -191,6 +192,20 @@ input {
   border: 2px solid var(--dark-text-color);
   color: var(--dark-text-color);
   background-color: var(--display-color);
+}
+
+.book-read-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 15px;
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+
+  align-self: center;
 }
 
 .submit-button {

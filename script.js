@@ -1,24 +1,24 @@
 /**
  * Book constructor
 */
-function Book(author, title, pages, releaseDate) {
+function Book(author, title, pages, releaseDate, readStatus) {
     this.author = author;
     this.title = title;
     this.pages = pages;
     this.releaseDate = releaseDate;
-    this.readStatus = false;
+    this.readStatus = readStatus;
     this.id = crypto.randomUUID();
 }
 
-Book.prototype.toggleRead = function() {
+Book.prototype.toggleRead = function () {
     this.readStatus = !(this.readStatus);
 };
 
 /**
  * Adds a book with given parameters to the library array
  */
-function addBookToLibrary(author, title, pages, releaseDate) {
-    library.push(new Book(author, title, pages, releaseDate));
+function addBookToLibrary(author, title, pages, releaseDate, readStatus) {
+    library.push(new Book(author, title, pages, releaseDate, readStatus));
 }
 
 /**
@@ -27,6 +27,7 @@ function addBookToLibrary(author, title, pages, releaseDate) {
 function updateLibraryDisplay() {
     const bookDisplay = document.querySelector(".book-display");
 
+    //Clear all book elements on the page first to avoid duplicate books
     while (bookDisplay.childElementCount !== 0) {
         bookDisplay.lastChild.remove();
     }
@@ -60,7 +61,7 @@ function updateLibraryDisplay() {
         readButton.textContent = "Toggle read";
         readButton.addEventListener("click", () => {
             book.toggleRead();
-            readStatus.textContent = (book.readStatus ? "Read" : "Not read"); 
+            readStatus.textContent = (book.readStatus ? "Read" : "Not read");
         });
         bookElement.appendChild(readButton);
 
@@ -84,9 +85,9 @@ function updateLibraryDisplay() {
 
 const library = [];
 
-addBookToLibrary("Oscar Wilde", "The Picture of Dorian Gray", 320, 1891);
-addBookToLibrary("George Orwell", "1984", 317, 1949);
-addBookToLibrary("Homer", "Odyssey", 550, -700);
+addBookToLibrary("Oscar Wilde", "The Picture of Dorian Gray", 320, 1891, false);
+addBookToLibrary("George Orwell", "1984", 317, 1949, false);
+addBookToLibrary("Homer", "Odyssey", 550, -700, false);
 
 updateLibraryDisplay();
 
@@ -113,7 +114,12 @@ form.addEventListener("submit", (e) => {
         input.value = "";
     }
 
-    addBookToLibrary(inputValues[0], inputValues[1], inputValues[2], inputValues[3]);
+    const checkbox = document.getElementById("form-read-checkbox");
+
+    addBookToLibrary(inputValues[0], inputValues[1], inputValues[2], inputValues[3], checkbox.checked);
+
+    if (checkbox.checked) checkbox.checked = false;
+    
     updateLibraryDisplay();
 
     dialogWindow.close();
