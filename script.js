@@ -78,8 +78,6 @@ function updateLibraryDisplay() {
         });
         bookElement.appendChild(removeButton);
 
-        bookElement.setAttribute("data-id", book.id);
-
         bookDisplay.appendChild(bookElement);
     }
 }
