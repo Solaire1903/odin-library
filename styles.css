@@ -6,6 +6,8 @@
   --dark-text-color: rgb(65, 27, 13);
   --button-hover-color: rgb(46, 19, 9);
   --button-hover-color-light: rgb(203, 162, 110);
+  --book-shadow-color: rgb(75, 24, 24);
+  --header-shadow-color: rgb(187, 158, 121);
 }
 
 * {
@@ -42,6 +44,8 @@ button:hover {
 
 .button-area {
   background-color: var(--header-color);
+  z-index: 1;
+  box-shadow: 0px 5px 5px var(--header-shadow-color);
 
   display: flex;
   justify-content: center;
@@ -87,6 +91,8 @@ button:hover {
   border-bottom-left-radius: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
+  z-index: 1;
+  box-shadow: 5px 5px 1px var(--book-shadow-color);
 
   display: grid;
   grid-template-columns: 2fr 1fr;

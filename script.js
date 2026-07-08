@@ -113,13 +113,11 @@ form.addEventListener("submit", (e) => {
         inputValues.push(input.value);
         input.value = "";
     }
-
     const checkbox = document.getElementById("form-read-checkbox");
 
     addBookToLibrary(inputValues[0], inputValues[1], inputValues[2], inputValues[3], checkbox.checked);
 
     if (checkbox.checked) checkbox.checked = false;
-    
     updateLibraryDisplay();
 
     dialogWindow.close();
