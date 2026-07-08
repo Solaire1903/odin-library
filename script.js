@@ -60,7 +60,7 @@ function updateLibraryDisplay() {
         readButton.textContent = "Toggle read";
         readButton.addEventListener("click", () => {
             book.toggleRead();
-            updateLibraryDisplay();
+            readStatus.textContent = (book.readStatus ? "Read" : "Not read"); 
         });
         bookElement.appendChild(readButton);
 
