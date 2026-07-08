@@ -58,6 +58,10 @@ function updateLibraryDisplay() {
         const readButton = document.createElement("button");
         readButton.classList.add("read-button");
         readButton.textContent = "Toggle read";
+        readButton.addEventListener("click", () => {
+            book.toggleRead();
+            updateLibraryDisplay();
+        });
         bookElement.appendChild(readButton);
 
         const readStatus = document.createElement("p");
