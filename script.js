@@ -72,24 +72,16 @@ function updateLibraryDisplay() {
         const removeButton = document.createElement("button");
         removeButton.classList.add("remove-button");
         removeButton.textContent = "Remove";
-        removeButton.addEventListener("click", removeBook);
+        removeButton.addEventListener("click", () => {
+            library.splice(library.indexOf(book), 1);
+            bookElement.remove();
+        });
         bookElement.appendChild(removeButton);
 
         bookElement.setAttribute("data-id", book.id);
 
         bookDisplay.appendChild(bookElement);
     }
-}
-
-function removeBook(event) {
-    const bookElement = event.target.parentNode;
-    for (const book of library) {
-        if (book.id === bookElement.dataset.id) {
-            library.splice(library.indexOf(book), 1);
-        }
-    }
-
-    updateLibraryDisplay();
 }
 
 const library = [];
