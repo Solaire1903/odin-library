@@ -85,8 +85,8 @@ function updateLibraryDisplay() {
 
 const library = [];
 
-addBookToLibrary("Oscar Wilde", "The Picture of Dorian Gray", 320, 1891, false);
-addBookToLibrary("George Orwell", "1984", 317, 1949, false);
+addBookToLibrary("Oscar Wilde", "The Picture of Dorian Gray", 320, 1891, true);
+addBookToLibrary("George Orwell", "1984", 317, 1949, true);
 addBookToLibrary("Homer", "Odyssey", 550, -700, false);
 
 updateLibraryDisplay();
