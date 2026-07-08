@@ -6,6 +6,7 @@ function Book(author, title, pages, releaseDate) {
     this.title = title;
     this.pages = pages;
     this.releaseDate = releaseDate;
+    this.readStatus = false;
     this.id = crypto.randomUUID();
 }
 
@@ -21,7 +22,7 @@ function addBookToLibrary(author, title, pages, releaseDate) {
  */
 function updateLibraryDisplay() {
     const bookDisplay = document.querySelector(".book-display");
-    
+
     while (bookDisplay.childElementCount !== 0) {
         bookDisplay.lastChild.remove();
     }
@@ -45,15 +46,20 @@ function updateLibraryDisplay() {
         pages.textContent = `${book.pages} pages`;
         bookElement.appendChild(pages);
 
+        const releaseDate = document.createElement("p");
+        releaseDate.classList.add("release-date");
+        releaseDate.textContent = `Released in: ${book.releaseDate}`;
+        bookElement.appendChild(releaseDate);
+
         const readButton = document.createElement("button");
         readButton.classList.add("read-button");
         readButton.textContent = "Toggle read";
         bookElement.appendChild(readButton);
 
-        const releaseDate = document.createElement("p");
-        releaseDate.classList.add("release-date");
-        releaseDate.textContent = `Released in: ${book.releaseDate}`;
-        bookElement.appendChild(releaseDate);
+        const readStatus = document.createElement("p");
+        readStatus.classList.add("read-status");
+        readStatus.textContent = (book.readStatus ? "Read" : "Not read");
+        bookElement.appendChild(readStatus);
 
         const removeButton = document.createElement("button");
         removeButton.classList.add("remove-button");
