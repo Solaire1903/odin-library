@@ -10,6 +10,10 @@ function Book(author, title, pages, releaseDate) {
     this.id = crypto.randomUUID();
 }
 
+Book.prototype.toggleRead = function() {
+    this.readStatus = !(this.readStatus);
+};
+
 /**
  * Adds a book with given parameters to the library array
  */
