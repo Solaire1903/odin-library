@@ -1,18 +1,50 @@
 /**
- * Book constructor
+ * Book class
 */
-function Book(author, title, pages, releaseDate, readStatus) {
-    this.author = author;
-    this.title = title;
-    this.pages = pages;
-    this.releaseDate = releaseDate;
-    this.readStatus = readStatus;
-    this.id = crypto.randomUUID();
-}
+class Book {
+    #author;
+    #title;
+    #pages;
+    #releaseDate;
+    #readStatus;
+    #id;
 
-Book.prototype.toggleRead = function () {
-    this.readStatus = !(this.readStatus);
-};
+    constructor(author, title, pages, releaseDate, readStatus) {
+        this.#author = author;
+        this.#title = title;
+        this.#pages = pages;
+        this.#releaseDate = releaseDate;
+        this.#readStatus = readStatus;
+        this.#id = crypto.randomUUID();
+    }
+
+    get author() {
+        return this.#author;
+    }
+
+    get title() {
+        return this.#title;
+    }
+
+    get pages() {
+        return this.#pages;
+    }
+
+    get releaseDate() {
+        return this.#releaseDate;
+    }
+
+    get readStatus() {
+        return this.#readStatus;
+    }
+
+    /**
+     * Toggles read status
+     */
+    toggleRead() {
+        this.#readStatus = !(this.#readStatus);
+    }
+}
 
 /**
  * Adds a book with given parameters to the library array
